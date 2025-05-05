@@ -15,7 +15,7 @@ class Order(BaseModel):
     lastName: StringValue
     emailAddress: StringValue
     street: StringValue
-    postalCode: StringValue
+    postalCode: PositiveInt
     city: StringValue
     items: dict[str, PositiveInt]
 
@@ -31,7 +31,7 @@ class OrderUpdate(Order):
     lastName: Optional[StringValue]
     emailAddress: Optional[StringValue]
     street: Optional[StringValue]
-    postalCode: Optional[StringValue]
+    postalCode: Optional[PositiveInt]
     city: Optional[StringValue]
     items: Optional[dict]
 

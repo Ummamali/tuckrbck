@@ -39,25 +39,29 @@ class CRUDRoutes:
             async def create(req: Request, res: Response):
                 id = str(uuid.uuid4()).replace('-', '')
                 item = await req.json()
+                item_coerced = None
                 try:
-                    self.ObjectSchema(**item)
+                    m = self.ObjectSchema(**item)
+                    item_coerced = m.dict()
                 except ValidationError as e:
                     res.status_code = 400
                     return e.errors()
 
-                self.database.create(id, item)
+                self.database.create(id, item_coerced)
                 return {'createdId': id}
 
         if 'U' in self.route_code:
             @self.router.put('/{id}')
             async def update(id: str, req: Request):
                 delta = await req.json()
+                delta_coerced = None
                 try:
-                    self.ObjectUpdateSchema(**delta)
+                    m = self.ObjectUpdateSchema(**delta)
+                    delta_coerced = m.dict()
                 except ValidationError as e:
                     return e.errors()
 
-                updated = self.database.update(id, delta)
+                updated = self.database.update(id, delta_coerced)
                 return updated
 
         if 'D' in self.route_code:
