@@ -2,6 +2,8 @@
 
 The Tuckr backend is built with FastAPI, providing a robust and efficient API for the Tuckr food ordering app. It handles order creation, food item management, and user input validation. With support for asynchronous operations, the backend ensures high performance and quick response times. It securely stores order data and integrates seamlessly with the React frontend, delivering a smooth experience from browsing food items to completing orders. This backend is optimized for scalability and reliability, making it a powerful foundation for the Tuckr app.
 
+<img alt="Project Frontend Preview" src="./preview.jpg"/>
+
 ## API Routes 📡
 
 The Tuckr backend provides the following RESTful API endpoints:
