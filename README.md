@@ -4,6 +4,8 @@ The Tuckr backend is built with FastAPI, providing a robust and efficient API fo
 
 <img alt="Project Frontend Preview" src="./preview.jpg"/>
 
+Frontend for Tuckr has been developed in React 19. [Tucker Frontend](https://github.com/ummamali/tuckr)
+
 ## API Routes 📡
 
 The Tuckr backend provides the following RESTful API endpoints:
